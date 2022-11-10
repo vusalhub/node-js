@@ -1,7 +1,12 @@
-docker swarm init add what you get to worker node --open the port
-docker node ls
+docker swarm init #add what you get to worker node --open the port
+                  #if available you need docker swarm leave --force
+                  #create ec2 worker and master nodes.
+                  #docker swarm init results need copy paste all worker nodes
+                  
+docker node ls    #show master and worker nodes
 docker service ls
 docker run -it -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock dockersamples/visualizer
+                  #visual effect crate you can see all details
 docker ps -a
 docker service create --name nginxweb -p 8081:80 nginx
 docker service create --name nginxweb1 -p 8082:80 --replicas 5 nginx
